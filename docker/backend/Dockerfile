@@ -4,7 +4,7 @@ RUN apt-get update && apt-get install -y openssl procps
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package*.json ./
 
 # Install dependencies
 RUN npm i -g @nestjs/cli

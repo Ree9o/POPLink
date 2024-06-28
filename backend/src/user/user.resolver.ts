@@ -5,7 +5,7 @@ import { User as UserModel } from './models/user.model';
 import { CreateUserInput } from './dto/createUser.dto';
 import { GetUserArgs } from './dto/getUser.args';
 import { UnauthorizedException, UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { DeleteUserArgs } from './dto/deteleUser.args';
 
 @Resolver()

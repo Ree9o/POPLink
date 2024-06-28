@@ -3,15 +3,13 @@ import { Field, HideField, Int, ObjectType } from '@nestjs/graphql';
 @ObjectType()
 export class User {
   @Field(() => Int)
-  id: number;
+  user_id: number;
   @Field()
-  name: string;
+  username: string;
   @Field()
   email: string;
   @HideField() // client（gql）から取得できなくする
   password: string;
   @Field()
-  createdAt: Date;
-  @Field()
-  updatedAt: Date;
+  created_at: Date;
 }

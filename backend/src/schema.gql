@@ -19,14 +19,26 @@ type SignInResponse {
   user: User!
 }
 
+type Post {
+  post_id: Int!
+  user_id: Int!
+  image_url: String!
+  caption: String
+  created_at: DateTime!
+}
+
 type Query {
   getUser(email: String!): User
   deleteUser(id: Int!): User!
+  getPosts(user_id: Int!): [Post!]
+  getAllPosts: [Post!]!
 }
 
 type Mutation {
   createUser(createUserInput: CreateUserInput!): User!
   signIn(signInInput: SignInInput!): SignInResponse!
+  createPost(createPostInput: CreatePostInput!): Post!
+  deletePost(post_id: Int!): Post!
 }
 
 input CreateUserInput {
@@ -38,4 +50,10 @@ input CreateUserInput {
 input SignInInput {
   email: String!
   password: String!
+}
+
+input CreatePostInput {
+  user_id: Int!
+  image_url: String!
+  caption: String
 }

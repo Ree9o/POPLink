@@ -10,7 +10,6 @@ import {
 import { S3Service } from './s3.service';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { CreateImageRequest } from './dto/createImageRequest.dto';
-import { LogService } from '../log/log.service';
 
 @Controller('s3')
 export class S3Controller {
